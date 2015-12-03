@@ -1,7 +1,6 @@
 package fprg.figl.winterhalder;
 
 import java.util.ArrayList;
-import java.util.function.Function;
 
 public class Main {
 
@@ -11,13 +10,71 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> input = new ArrayList<>();
-        input.add(1);
-        input.add(2);
-        input.add(3);
-        input.add(4);
-        ArrayList<Integer> result = map( x -> ( x + 1), input);
-        System.out.println(result);
+        //Integer
+        ArrayList<Integer> inputInteger = new ArrayList<Integer>(){{
+            add(3);
+            add(7);
+            add(15);
+            add(44);
+        }};
+
+        ArrayList<Integer> resultIntegerPlusOne = map(x -> ( x + 1), inputInteger);
+        ArrayList<Integer> resultIntegerTimes = map(x -> ( x * x), inputInteger);
+        ArrayList<Integer> resultIntegerPlus = map(x -> ( x + x), inputInteger);
+
+        System.out.println("--------Integer--------");
+        System.out.println("resultIntegerPlusOne: " + resultIntegerPlusOne);
+        System.out.println("resultIntegerTimes: " + resultIntegerTimes);
+        System.out.println("resultIntegerPlus: " + resultIntegerPlus);
+
+        //Double
+        ArrayList<Double> inputDouble = new ArrayList<Double>(){{
+            add(3.4);
+            add(7.22);
+            add(15.0);
+            add(44.234);
+        }};
+
+        ArrayList<Double> resultDoublePlusOne = map( x -> ( x + 1), inputDouble);
+        ArrayList<Double> resultDoubleTimes = map( x -> ( x * x), inputDouble);
+        ArrayList<Double> resultDoublePlus = map( x -> ( x + x), inputDouble);
+
+        System.out.println("--------Double--------");
+        System.out.println("resultDoublePlusOne: " + resultDoublePlusOne);
+        System.out.println("resultDoubleTimes: " + resultDoubleTimes);
+        System.out.println("resultDoublePlus: " + resultDoublePlus);
+
+        //String
+        ArrayList<String> inputString = new ArrayList<String>() {{
+            add("hello");
+            add("functional");
+            add("world");
+            add("!");
+        }};
+
+        ArrayList<String> resultStringConcat = map( x -> ( x + x), inputString);
+        ArrayList<String> resultStringUpper = map( x -> ( x.toUpperCase()), inputString);
+        ArrayList<String> resultStringReplce = map( x -> ( x.replaceAll("l","q")), inputString);
+
+        System.out.println("--------String--------");
+        System.out.println("resultString: " + resultStringConcat);
+        System.out.println("resultStringUpper: " + resultStringUpper);
+        System.out.println("resultStringReplace: " + resultStringReplce);
+
+        //Boolean
+        ArrayList<Boolean> inputBoolean = new ArrayList<Boolean>() {{
+            add(true);
+            add(true);
+            add(false);
+            add(true);
+        }};
+
+        ArrayList<Boolean> resultBooleanTrue = map( x -> (x.equals(true)), inputBoolean);
+        ArrayList<Boolean> resultBooleanFalse = map( x -> (x.equals(false)), inputBoolean);
+
+        System.out.println("--------Boolean--------");
+        System.out.println("resultBoolenTrue: " + resultBooleanTrue);
+        System.out.println("resultBoolenFalse: " + resultBooleanFalse);
     }
 
     private static <I,O> ArrayList<O> map(Imap<I,O> func, ArrayList<I> input){
