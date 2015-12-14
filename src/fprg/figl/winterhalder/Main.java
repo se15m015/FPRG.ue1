@@ -23,6 +23,7 @@ public class Main {
         ArrayList<Integer> resultIntegerPlus = map(x -> ( x + x), inputInteger);
 
         System.out.println("--------Integer--------");
+        System.out.println("input: " + inputInteger);
         System.out.println("resultIntegerPlusOne: " + resultIntegerPlusOne);
         System.out.println("resultIntegerTimes: " + resultIntegerTimes);
         System.out.println("resultIntegerPlus: " + resultIntegerPlus);
@@ -40,6 +41,7 @@ public class Main {
         ArrayList<Double> resultDoublePlus = map( x -> ( x + x), inputDouble);
 
         System.out.println("--------Double--------");
+        System.out.println("input: " + inputDouble);
         System.out.println("resultDoublePlusOne: " + resultDoublePlusOne);
         System.out.println("resultDoubleTimes: " + resultDoubleTimes);
         System.out.println("resultDoublePlus: " + resultDoublePlus);
@@ -57,6 +59,7 @@ public class Main {
         ArrayList<String> resultStringReplce = map( x -> ( x.replaceAll("l","q")), inputString);
 
         System.out.println("--------String--------");
+        System.out.println("input: " + inputString);
         System.out.println("resultString: " + resultStringConcat);
         System.out.println("resultStringUpper: " + resultStringUpper);
         System.out.println("resultStringReplace: " + resultStringReplce);
@@ -73,6 +76,7 @@ public class Main {
         ArrayList<Boolean> resultBooleanFalse = map( x -> (x.equals(false)), inputBoolean);
 
         System.out.println("--------Boolean--------");
+        System.out.println("input: " + inputBoolean);
         System.out.println("resultBoolenTrue: " + resultBooleanTrue);
         System.out.println("resultBoolenFalse: " + resultBooleanFalse);
     }
