@@ -91,7 +91,7 @@ public class Main {
 
     private static  <I,O> void mapRec(Imap<I,O> func, ArrayList<I> input, ArrayList<O> output, int count){
 
-        // abbruch;
+        // abbruch
         if(count == input.size()){
             return;
         }
